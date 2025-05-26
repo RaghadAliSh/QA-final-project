@@ -1,4 +1,3 @@
-// tests/checkout.spec.ts
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/login.page';
 import { InventoryPage } from '../pages/InventoryPage';
@@ -20,8 +19,8 @@ test.describe('Checkout Feature', () => {
     await page.goto(process.env.BASEURL!);
     await loginPage.login(process.env['USER-NAME']!, process.env.PASSWORD!);
     await inventoryPage.addItemToCart('sauce-labs-backpack');
-    await page.locator('.shopping_cart_link').click(); // Go to cart
-    await cartPage.goToCheckout(); // Click "Checkout"
+    await page.locator('.shopping_cart_link').click(); 
+    await cartPage.goToCheckout(); 
   });
 
   test.describe('Valid Checkout', () => {

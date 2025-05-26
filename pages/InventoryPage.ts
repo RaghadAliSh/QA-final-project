@@ -18,11 +18,11 @@ export class InventoryPage {
     return parseInt(text, 10);
   }
 
-  sortDropdown = () => this.page.locator('[data-test="product_sort_container"]');
-
-async selectSortOption(option: string) {
-  await this.sortDropdown().selectOption(option);
-}
+  sortDropdown = () => this.page.getByText('Name (A to Z)Name (A to Z)').locator('..').getByRole('combobox');
+  async selectSortOption(option: string) {
+    await this.sortDropdown().waitFor({ state: 'visible', timeout: 5000 });
+    await this.sortDropdown().selectOption(option);
+  }
 
 async getProductNames(): Promise<string[]> {
   return await this.page.locator('.inventory_item_name').allTextContents();

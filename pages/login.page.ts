@@ -8,7 +8,6 @@ export class LoginPage {
   passwordInput = () => this.page.locator('[data-test="password"]');
   loginButton = () => this.page.locator('[data-test="login-button"]');
 
-
   async login(username: string, password: string) {
     await this.usernemeInput().fill(username);
     await this.passwordInput().fill(password);

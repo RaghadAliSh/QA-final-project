@@ -1,4 +1,3 @@
-// pages/CartPage.ts
 import { Page } from '@playwright/test';
 
 export class CartPage {
